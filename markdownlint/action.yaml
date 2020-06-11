@@ -1,0 +1,9 @@
+name: "markdownlint"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for markdownlint."
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'terminal'
+  color: 'red'
