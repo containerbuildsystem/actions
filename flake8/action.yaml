@@ -1,0 +1,9 @@
+name: "flake8 for Py3"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for flake8 using Python 3."
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'terminal'
+  color: 'red'
