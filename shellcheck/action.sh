@@ -3,20 +3,21 @@
 cd "$GITHUB_WORKSPACE" || exit 1
 
 declare exitstatus
-declare -a filepaths
-
 exitstatus=0
 
-excludes+=( ! -path *./.git* )
+# Uncomment everything below to check all shell scripts
 
-readarray filepaths < <( find . -type f "${excludes[@]}" -exec file '{}' + \
-                         | grep "shell script" \
-                         | cut -d : -f 1 )
+# declare -a filepaths
+# excludes+=( ! -path *./.git* )
 
-for file in "${filepaths[@]}"; do
-    file_="${file//[$'\t\r\n ']}"
-    printf "\n:: shellchecking %s ::" "$file_"
-    shellcheck -Calways $file_ || exitstatus=$?
-done
+# readarray filepaths < <( find . -type f "${excludes[@]}" -exec file '{}' + \
+#                          | grep "shell script" \
+#                          | cut -d : -f 1 )
+
+# for file in "${filepaths[@]}"; do
+#    file_="${file//[$'\t\r\n ']}"
+    printf "\n:: shellchecking 'test.sh' ::"
+    shellcheck -Calways ./test.sh || exitstatus=$?
+# done
 
 exit "$exitstatus"
