@@ -22,5 +22,12 @@ Current collection:
   - Fedora: 34
   - shellcheck: Fedora latest
   - config: defaults; only enabled for 'test.sh'
+- [tekton-lint][] (nodejs)
+  - docker
+  - Fedora: 34
+  - node >12 (uses Fedora latest, currently >14)
+  - tekton-lint@v0.6.0
+  - config: defaults; restricted to tekton yaml only
 
 [markdownlint]: https://github.com/markdownlint/markdownlint
+[tekton-lint]: https://github.com/IBM/tekton-lint

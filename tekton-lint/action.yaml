@@ -1,0 +1,16 @@
+name: "tekton-lint"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for tekton-lint."
+inputs:
+  path:
+    description: 'Path to Tekton resource definition yaml files'
+    required: true
+    default: 'tekton/**/*.yaml'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+branding:
+  icon: 'terminal'
+  color: 'red'
