@@ -1,0 +1,9 @@
+name: "ansible-lint"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for ansible-lint."
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'terminal'
+  color: 'red'
