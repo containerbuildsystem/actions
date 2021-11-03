@@ -4,12 +4,12 @@ Container Build System's GitHub Action collection
 
 New actions should live in their own directory - *not* on new branches
 
-Current collection:
+Current collection
 
 - [ansible-lint][]
   - docker
-  - Fedora: 34
-  - Py 3, Fedora latest (3.9.x)
+  - Fedora 35
+  - Py 3, Fedora default (3.10.x)
   - pip:
     - ansible>=2.10,<2.11
     - ansible-lint latest (5.2.x)
@@ -17,13 +17,13 @@ Current collection:
   - config: strictly in-repo
 - [flake8][]
   - docker
-  - Fedora: 34
-  - Py 3, Fedora latest
+  - Fedora 35
+  - Py 3, Fedora default (3.10.x)
   - python3-flake8, Fedora default (3.9.x)
   - config: defaults, with "--max-line-length=100"
 - [markdownlint][] (ruby version)
   - docker
-  - Fedora: 34
+  - Fedora 35
   - ruby >= 2.6, Fedora default (3.0.x)
   - gem:
     - mdl:'>=0.11.0'
@@ -31,14 +31,14 @@ Current collection:
   - config: in-repo
 - [ShellCheck][]
   - docker
-  - Fedora: 34
-  - ShellCheck: Fedora default (0.7.x)
+  - Fedora 35
+  - ShellCheck, Fedora default (0.7.x)
   - called from 'action.sh'
   - config: defaults; only enabled for 'test.sh'
 - [tekton-lint][] (nodejs)
   - docker
-  - Fedora: 34
-  - node >12 (uses Fedora latest, currently >14)
+  - Fedora 35
+  - nodejs >= 16, Fedora default (16.11.x)
   - npm:
     - tekton-lint@v0.6.0
   - config: defaults; restricted to tekton yaml only
