@@ -6,7 +6,7 @@ RUN dnf -y --nodocs  --setopt=install_weak_deps=False \
 --disablerepo=updates-modular \
 install ruby rubygems git && \
 dnf clean all && \
-gem install "mdl:0.9"
+gem install mdl:'>=0.11.0'
 
 COPY action.sh /action/action.sh
 ENTRYPOINT ["bash", "/action/action.sh"]

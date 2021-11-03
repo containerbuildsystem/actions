@@ -24,7 +24,7 @@ Current collection:
   - docker
   - Fedora: 34
   - ruby: Fedora latest
-  - mdl:0.9
+  - mdl:'>=0.11.0'
   - config: currently per-repo
 - shellcheck
   - docker
