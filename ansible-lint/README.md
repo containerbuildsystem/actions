@@ -5,7 +5,7 @@ A GitHub action to lint ansible files, using [ansible-community/ansible-lint][].
 
 ## Inputs
 
-### No inputs; we recommend using a per-repo .ansible-lint config instead
+### None; config is in-repo
 
 ## Outputs
 
