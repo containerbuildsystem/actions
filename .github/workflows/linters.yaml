@@ -1,0 +1,34 @@
+name: Linters
+
+on:
+  pull_request:
+
+  push:
+    branches:
+      - master
+
+jobs:
+  markdownlint:
+    name: Markdownlint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Run markdownlint
+        uses: containerbuildsystem/actions/markdownlint@master
+
+  dockerfile-lint:
+    name: Dockerfile lint
+    runs-on: ubuntu-latest
+
+    container:
+      image: hadolint/hadolint:latest-debian
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v1
+
+      - name: Lint Dockerfiles with hadolint
+        run: hadolint --ignore DL3013 --ignore DL3041 **/Dockerfile
