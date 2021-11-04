@@ -1,3 +1,4 @@
+---
 name: "tekton-lint"
 author: "Ben Alkov <ben.alkov@redhat.com>"
 description: "GitHub action for tekton-lint."

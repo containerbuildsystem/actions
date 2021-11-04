@@ -1,10 +1,12 @@
+---
 name: "yamllint for Py3"
 author: "Ben Alkov <ben.alkov@redhat.com>"
 description: "GitHub action for yamllint using Python 3."
 inputs:
   path:
-    description: "Path containing YAML files to check. Can be a single file, wildcard, etc.
-                  '.' will automatcially find and check everything below $CWD."
+    description: "Path containing YAML files to check. Can be a single file,
+                  wildcard, etc.
+                  '.' will automatically find and check everything below $CWD."
     required: true
     default: '.'
 runs:
