@@ -4,7 +4,7 @@ A GitHub action to lint shell scripts using [ShellCheck][].
 
 ## Inputs
 
-### None; uses default config
+### Path to files to check, default config otherwise
 
 ## Outputs
 
@@ -12,6 +12,10 @@ A GitHub action to lint shell scripts using [ShellCheck][].
 
 ## Example usage
 
-`uses: containerbuildsystem/actions/shellcheck@master`
+```yaml
+   uses: containerbuildsystem/actions/shellcheck@master
+   with:
+     path: '.'
+```
 
 [ShellCheck]: https://github.com/koalaman/shellcheck
