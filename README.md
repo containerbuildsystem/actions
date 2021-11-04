@@ -42,9 +42,18 @@ Current collection
   - npm:
     - tekton-lint@v0.6.0
   - config: defaults; restricted to tekton yaml only
+- [yamllint][]
+  - docker
+  - Fedora 35
+  - Py 3, Fedora default (3.10.x)
+  - yamllint, Fedora default (1.26.x)
+  - config:
+    - '-s' strict mode, warnings are reported as errors
+    - 'path' parameter, all YAML by default
 
 [ansible-lint]: ./ansible-lint/README.md
 [flake8]: ./flake8/README.md
 [markdownlint]: ./markdownlint/README.md
 [ShellCheck]: ./shellcheck/README.md
 [tekton-lint]: ./tekton-lint/README.md
+[yamllint]: ./yamllint/README.md
