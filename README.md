@@ -34,7 +34,9 @@ Current collection
   - Fedora 35
   - ShellCheck, Fedora default (0.7.x)
   - called from 'action.sh'
-  - config: defaults; only enabled for 'test.sh'
+  - config: defaults
+  - inputs
+    - 'path' parameter, defaults to 'test.sh'
 - [tekton-lint][] (nodejs)
   - docker
   - Fedora 35

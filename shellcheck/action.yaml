@@ -2,9 +2,19 @@
 name: "shellcheck"
 author: "Ben Alkov <ben.alkov@redhat.com>"
 description: "GitHub action for ShellCheck."
+inputs:
+  path:
+    description: "Path to shell scripts to check. Can be a single file,
+                  wildcard, etc.
+                  '.' is recommended for `find`ing all shell scripts in the
+                  current repo."
+    required: true
+    default: './test.sh'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
 branding:
   icon: 'terminal'
   color: 'red'

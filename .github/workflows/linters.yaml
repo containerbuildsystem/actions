@@ -34,6 +34,19 @@ jobs:
       - name: Lint Dockerfiles with hadolint
         run: hadolint --ignore DL3013 --ignore DL3041 **/Dockerfile
 
+  shellcheck:
+    name: Shellcheck
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v2
+
+      - name: Run ShellCheck
+        uses: containerbuildsystem/actions/shellcheck@master
+        with:
+          path: '.'
+
   yamllint:
     name: yamllint
     runs-on: ubuntu-latest
