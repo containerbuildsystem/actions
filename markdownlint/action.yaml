@@ -1,3 +1,4 @@
+---
 name: "markdownlint"
 author: "Ben Alkov <ben.alkov@redhat.com>"
 description: "GitHub action for markdownlint."

@@ -1,3 +1,4 @@
+---
 name: "shellcheck"
 author: "Ben Alkov <ben.alkov@redhat.com>"
 description: "GitHub action for ShellCheck."
