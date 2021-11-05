@@ -1,0 +1,18 @@
+---
+name: "doc8 for Py3"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for doc8 using Python 3."
+inputs:
+  path:
+    description: >-
+      Path containing reStructuredText files to check. Can be a single file, wildcard, etc.
+    required: true
+    default: 'docs/'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+branding:
+  icon: 'terminal'
+  color: 'red'

@@ -15,6 +15,20 @@ Current collection
     - ansible-lint latest (5.2.x)
       - with "[community,yamllint]"
   - config: in-repo
+- [doc8][]
+  > NOTE: ignores Sphinx-specific false positives
+  >
+  > TLDR; this isn't really a Sphinx linter
+  - docker
+  - Fedora 35
+  - Py 3, Fedora default (3.10.x)
+  - pip
+    - doc8==0.9.1
+  - config
+    - defaults
+    - '--max-line-length=100'
+  - inputs
+    - 'path' parameter (required), default 'docs/'
 - [flake8][]
   - docker
   - Fedora 35
@@ -67,6 +81,7 @@ Current collection
     - 'path' parameter (required), default '.' (all YAML files)
 
 [ansible-lint]: ./ansible-lint/README.md
+[doc8]: ./doc8/README.md
 [flake8]: ./flake8/README.md
 [markdownlint]: ./markdownlint/README.md
 [ShellCheck]: ./shellcheck/README.md
