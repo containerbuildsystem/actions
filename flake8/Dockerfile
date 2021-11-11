@@ -7,5 +7,4 @@ RUN dnf -y --nodocs  --setopt=install_weak_deps=False \
 install python3-flake8 && \
 dnf clean all
 
-ENTRYPOINT ["flake8"]
-CMD ["--max-line-length=100"]
+ENTRYPOINT ["flake8", "--max-line-length=100"]

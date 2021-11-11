@@ -10,48 +10,61 @@ Current collection
   - docker
   - Fedora 35
   - Py 3, Fedora default (3.10.x)
-  - pip:
+  - pip
     - ansible>=2.10,<2.11
     - ansible-lint latest (5.2.x)
       - with "[community,yamllint]"
-  - config: strictly in-repo
+  - config: in-repo
 - [flake8][]
   - docker
   - Fedora 35
   - Py 3, Fedora default (3.10.x)
   - python3-flake8, Fedora default (3.9.x)
-  - config: defaults, with "--max-line-length=100"
+  - config
+    - defaults
+    - '--max-line-length=100'
+  - Auto-finds .py files
 - [markdownlint][] (ruby version)
   - docker
   - Fedora 35
   - ruby >= 2.6, Fedora default (3.0.x)
-  - gem:
+  - gem
     - mdl:'>=0.11.0'
   - called from 'action.sh'
-  - config: in-repo
+  - config:
+    - style rules are in-repo
+    - '-g .': Use git to auto-find .md files in '.'
 - [ShellCheck][]
   - docker
   - Fedora 35
   - ShellCheck, Fedora default (0.7.x)
   - called from 'action.sh'
-  - config: defaults
+  - config
+    - defaults
+    - '-Calways': always output color
   - inputs
-    - 'path' parameter, defaults to 'test.sh'
+    - 'path' parameter (required), default './test.sh'
 - [tekton-lint][] (nodejs)
   - docker
   - Fedora 35
   - nodejs >= 16, Fedora default (16.11.x)
-  - npm:
+  - npm
     - tekton-lint@v0.6.0
-  - config: defaults; restricted to tekton yaml only
+  - config
+    - defaults
+  - inputs
+    - 'path' parameter (required), default 'tekton/**/*.yaml'
 - [yamllint][]
   - docker
   - Fedora 35
   - Py 3, Fedora default (3.10.x)
   - yamllint, Fedora default (1.26.x)
-  - config:
-    - '-s' strict mode, warnings are reported as errors
-    - 'path' parameter, all YAML by default
+  - config
+    - '-s': strict mode, warnings are reported as errors
+    - '-f github': github output format, hits appear inline in diffs
+    - 'line-length': {max: 100}
+  - inputs
+    - 'path' parameter (required), default '.' (all YAML files)
 
 [ansible-lint]: ./ansible-lint/README.md
 [flake8]: ./flake8/README.md

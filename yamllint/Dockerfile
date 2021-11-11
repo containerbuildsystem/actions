@@ -7,5 +7,4 @@ RUN dnf -y --nodocs  --setopt=install_weak_deps=False \
 install yamllint && \
 dnf clean all
 
-ENTRYPOINT ["yamllint"]
-CMD ["-sf github"]
+ENTRYPOINT ["yamllint", "-s", "-f", "github", "-d", "{extends: default, rules: {line-length: {max: 100}}}"]
