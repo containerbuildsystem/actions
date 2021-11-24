@@ -60,6 +60,19 @@ Current collection
     - '--ignore-missing-imports'
   - inputs
     - 'package' parameter (required) (arg for '--package')
+- [pytype][]
+  - docker
+  - Fedora 34
+  - Py 3 < 3.10, Fedora default (3.9.x)
+  - pip
+    - pytype (latest)
+  - config
+    - defaults
+    - '-d import-error': ignore imports (pytype will fail (in GitHub workflows)
+      when checking for third party imports, unless they're explicitly
+      installed)
+  - inputs
+    - 'path' parameter (required), default '.'
 - [ShellCheck][]
   - docker
   - Fedora 35
@@ -97,6 +110,7 @@ Current collection
 [flake8]: ./flake8/README.md
 [markdownlint]: ./markdownlint/README.md
 [mypy]: ./mypy/README.md
+[pytype]: ./pytype/README.md
 [ShellCheck]: ./shellcheck/README.md
 [tekton-lint]: ./tekton-lint/README.md
 [yamllint]: ./yamllint/README.md
