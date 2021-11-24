@@ -1,0 +1,16 @@
+---
+name: "mypy"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for mypy."
+inputs:
+  package:
+    description: 'Python package name to check'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.package }}
+branding:
+  icon: 'terminal'
+  color: 'red'
