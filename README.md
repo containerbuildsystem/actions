@@ -48,6 +48,18 @@ Current collection
   - config:
     - style rules are in-repo
     - '-g .': Use git to auto-find .md files in '.'
+- [mypy][]
+  - docker
+  - Fedora 35
+  - Py 3, Fedora default (3.10.x)
+  - python3-mypy >= 0.910, Fedora default (0.910)
+  - config
+    - defaults
+    - '--install-types'
+    - '--non-interactive'
+    - '--ignore-missing-imports'
+  - inputs
+    - 'package' parameter (required) (arg for '--package')
 - [ShellCheck][]
   - docker
   - Fedora 35
@@ -84,6 +96,7 @@ Current collection
 [doc8]: ./doc8/README.md
 [flake8]: ./flake8/README.md
 [markdownlint]: ./markdownlint/README.md
+[mypy]: ./mypy/README.md
 [ShellCheck]: ./shellcheck/README.md
 [tekton-lint]: ./tekton-lint/README.md
 [yamllint]: ./yamllint/README.md
