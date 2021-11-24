@@ -1,0 +1,17 @@
+---
+name: "pytype"
+author: "Ben Alkov <ben.alkov@redhat.com>"
+description: "GitHub action for pytype."
+inputs:
+  path:
+    description: 'Path to Python sources to check'
+    required: true
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+branding:
+  icon: 'terminal'
+  color: 'red'
