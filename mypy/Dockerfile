@@ -1,4 +1,4 @@
-FROM registry.fedoraproject.org/fedora:35
+FROM registry.fedoraproject.org/fedora:41
 
 RUN dnf -y --nodocs  --setopt=install_weak_deps=False \
 --disablerepo=fedora-cisco-openh264 \
